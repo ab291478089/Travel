@@ -9,8 +9,8 @@
                 请输入内容
             </div>
             <div class="right">
-                <span class="iconfont down-btn">&#xe64a;</span>
                 城市
+                <span class="iconfont down-btn">&#xe64a;</span>
             </div>
         </header>
     </div>

@@ -19,28 +19,32 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination'
-      },
-      imgList: [
-        {id: 1, text: '热门景点', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'},
-        {id: 2, text: '银基水世界', imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/56275468d77b14cfb02430b0be09c448.png'},
-        {id: 3, text: '清明上河园', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/85/77241e9427222b02.png'},
-        {id: 4, text: '开封府', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png'},
-        {id: 5, text: '大宋武侠城', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/8c/47630407f70e8302.png'},
-        {id: 6, text: '夜场狂欢', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-        {id: 7, text: '小宋城', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png'},
-        {id: 8, text: '海洋馆', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png'},
-        {id: 9, text: '龙亭公园', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'}
-      ]
+        pagination: '.swiper-pagination',
+        autoplay: false
+      }
+      // imgList: [
+      //   {id: 1, text: '热门景点', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'},
+      //   {id: 2, text: '银基水世界', imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/56275468d77b14cfb02430b0be09c448.png'},
+      //   {id: 3, text: '清明上河园', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/85/77241e9427222b02.png'},
+      //   {id: 4, text: '开封府', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png'},
+      //   {id: 5, text: '大宋武侠城', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/8c/47630407f70e8302.png'},
+      //   {id: 6, text: '夜场狂欢', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
+      //   {id: 7, text: '小宋城', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png'},
+      //   {id: 8, text: '海洋馆', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png'},
+      //   {id: 9, text: '龙亭公园', imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'}
+      // ]
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.imgList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

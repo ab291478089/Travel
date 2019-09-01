@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪</div>
     <ul>
-      <li class="item" v-for="item in imgList" :key="item.id">
+      <li class="item" v-for="item in list" :key="item.id">
         <div class="item-img-top">
            <img class="item-img" :src="item.src" />
         </div>
@@ -18,40 +18,43 @@
 <script>
 export default {
   name: 'WeekendRecommand',
-  data () {
-    return {
-      imgList: [
-        {
-          id: 1,
-          src:
-            'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-          title: '京城周末撒欢',
-          desc: '在帝都过周末，不仅仅是城中游！'
-        },
-        {
-          id: 2,
-          src:
-            'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-          title: '京城周末撒欢',
-          desc: '在帝都过周末，不仅仅是城中游！'
-        },
-        {
-          id: 3,
-          src:
-            'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-          title: '北京野生动物园',
-          desc: '在帝都过周末，不仅仅是城中游！'
-        },
-        {
-          id: 4,
-          src:
-            'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-          title: '北京动物园',
-          desc: '在帝都过周末，不仅仅是城中游！'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
+//   data () {
+//     return {
+//       imgList: [
+//         {
+//           id: 1,
+//           src:
+//             'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
+//           title: '京城周末撒欢',
+//           desc: '在帝都过周末，不仅仅是城中游！'
+//         },
+//         {
+//           id: 2,
+//           src:
+//             'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
+//           title: '京城周末撒欢',
+//           desc: '在帝都过周末，不仅仅是城中游！'
+//         },
+//         {
+//           id: 3,
+//           src:
+//             'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
+//           title: '北京野生动物园',
+//           desc: '在帝都过周末，不仅仅是城中游！'
+//         },
+//         {
+//           id: 4,
+//           src:
+//             'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
+//           title: '北京动物园',
+//           desc: '在帝都过周末，不仅仅是城中游！'
+//         }
+//       ]
+//     }
+//   }
 }
 </script>
 

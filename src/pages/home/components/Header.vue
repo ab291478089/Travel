@@ -8,10 +8,12 @@
         <span class="iconfont">&#xe632;</span>
         请输入内容
       </div>
-      <div class="right">
-        {{this.city}}
-        <span class="iconfont down-btn">&#xe64a;</span>
-      </div>
+      <router-link to="/city">
+        <div class="right">
+          {{this.city}}
+          <span class="iconfont down-btn">&#xe64a;</span>
+        </div>
+      </router-link>
     </header>
   </div>
 </template>
@@ -26,17 +28,17 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
 header {
-  height: 0.86rem;
+  height: $headerHeight;
   display: flex;
   background-color: $bgnColor;
-  line-height: 0.86rem;
+  line-height: $headerHeight;
   color: #fff;
 }
 .left {
   width: 0.64rem;
   float: left;
   .back-btn {
-    text-align: crnter;
+    text-align: center;
     font-size: 0.4rem;
   }
 }
@@ -56,6 +58,7 @@ header {
   float: right;
   width: 1.24rem;
   text-align: center;
+  color: #fff;
 
   .down-btn {
     font-size: 0.2rem;

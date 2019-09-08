@@ -6,7 +6,7 @@
           </label>
       </div>
       <ul class="search-box" v-show="keyword">
-        <li class="search-item border-bottom"  v-for="item of list" :key="item.id">
+        <li class="search-item border-bottom" @click="handleChangeCity(item.name)" v-for="item of list" :key="item.id">
           {{item.name}}
         </li>
         <li class="search-item border-bottom"  v-show="hasData">已经没有匹配到的数据了~~~</li>
@@ -14,6 +14,7 @@
     </div>
 </template>
 <script>
+import {mapMutations} from 'vuex'
 export default {
   name: 'CitySearch',
   data () {
@@ -27,6 +28,13 @@ export default {
     hasData () {
       return !this.list.length
     }
+  },
+  methods: {
+    handleChangeCity (city) {
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   props: {
     citys: Object

@@ -18,9 +18,10 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -56,7 +57,8 @@ header {
 
 .right {
   float: right;
-  width: 1.24rem;
+  min-width: 1.24rem;
+  padding: 0 .08rem 0 .08rem;
   text-align: center;
   color: #fff;
 

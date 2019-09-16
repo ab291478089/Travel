@@ -45,7 +45,7 @@ export default {
         height: .4rem
         line-height: .4rem
         left: .6rem
-        top: 3.5rem
+        top: 2.5rem
         background: rgba(0,0,0,.8)
         color: #fff
         border-radius: .2rem
@@ -56,7 +56,7 @@ export default {
     .banner-txt
         position: absolute
         left: .6rem
-        top: 4rem
+        top: 3rem
         font-size: .36rem
         color: #fff
 </style>

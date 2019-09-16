@@ -28,5 +28,4 @@ export default {
       left: 0;
       text-align: center;
       font-size: 0.4rem;
-
 </style>

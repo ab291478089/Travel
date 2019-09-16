@@ -69,6 +69,7 @@ export default {
     text-align: center;
     line-height: $headerHeight;
     color: #fff;
+    z-index: 2
     .back-header
       position: absolute;
       top: 0;

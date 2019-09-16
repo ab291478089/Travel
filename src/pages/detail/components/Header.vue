@@ -34,7 +34,12 @@ export default {
     }
   },
   activated () {
+    // 如果不对全局事件进行解绑操作  当该组件执行此方法后 其他组件同样也可以执行
     window.addEventListener('scroll', this.handleScrool)
+  },
+  deactivated () {
+    // 对全局事件进行解绑
+    window.removeEventListener('scroll', this.handleScrool)
   }
 }
 </script>

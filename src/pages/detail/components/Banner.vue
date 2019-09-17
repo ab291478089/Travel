@@ -6,14 +6,18 @@
           <em>{{this.gallaryImgs.length}}</em>
     </div>
     <div class="banner-txt">{{sightName}}</div>
-    <Gallary :gallaryImgs="gallaryImgs" v-show="showGallary" @change="hiddenGallary"></Gallary>
+    <Fade-animation>
+      <Gallary :gallaryImgs="gallaryImgs" v-show="showGallary" @change="hiddenGallary"></Gallary>
+    </Fade-animation>
 </div>
 </template>
 <script>
 import Gallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   components: {
-    Gallary
+    Gallary,
+    FadeAnimation
   },
   props: {
     sightName: String,

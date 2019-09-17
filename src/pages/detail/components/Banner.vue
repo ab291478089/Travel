@@ -1,12 +1,12 @@
 <template>
 <div class="banner">
-    <img  class="banner-img" src="//img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_600x330_3f524da7.jpg" alt="" @click="changeGalary">
+    <img  class="banner-img" :src="bannerImg" alt="" @click="changeGalary">
     <div class="banner-photo">
           <span class="iconfont banner-icon">&#xe692;</span>
-          <em>27</em>
+          <em>{{this.gallaryImgs.length}}</em>
     </div>
-    <div class="banner-txt">北京欢乐谷(AAAA景区)</div>
-    <Gallary :imgs="imgs" v-show="showGallary" @change="hiddenGallary"></Gallary>
+    <div class="banner-txt">{{sightName}}</div>
+    <Gallary :gallaryImgs="gallaryImgs" v-show="showGallary" @change="hiddenGallary"></Gallary>
 </div>
 </template>
 <script>
@@ -15,11 +15,14 @@ export default {
   components: {
     Gallary
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_r_800x800_9b21ceda.jpg',
-        'http://img1.qunarzz.com/sight/p0/1804/cf/cfab40f6cd9d80f1a3.img.jpg_r_800x800_c0f07486.jpg']
+      showGallary: false
     }
   },
   methods: {
